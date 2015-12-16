@@ -2,6 +2,8 @@
 
 Crystal bindings for the PortAudio library
 
+** This is WORK IN PROGRESS **
+
 ## Dependencies
 
 * libportaudio:
