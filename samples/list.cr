@@ -1,16 +1,20 @@
 require "../src/portaudio"
 
-puts LibPortAudio.get_version
-puts String.new(LibPortAudio.get_version_text)
+puts "#{Pa.version_text} [#{Pa.version}]"
 
-puts LibPortAudio.initialize
+LibPortAudio.initialize
 
-count = LibPortAudio.get_host_api_count
-i = 0
-while i < count
-  info = LibPortAudio.get_host_api_info(i)
-  puts info.value
-  i += 1
+puts "Listing known Host APIs:"
+apis = Pa::HostApi.all
+apis.each do |api|
+  puts "- #{api.name}"
 end
 
-puts LibPortAudio.terminate
+puts "Listing Devices"
+devices = Pa::Device.all
+devices.each do |device|
+  api = device.host_api
+  puts "- ##{device.id}: #{api.name}: #{device.name}"
+end
+
+LibPortAudio.terminate
