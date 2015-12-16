@@ -2,6 +2,12 @@
 
 Crystal bindings for the PortAudio library
 
+## Dependencies
+
+* libportaudio:
+ * On OSX: `brew install portaudio`
+ * On Debian/Ubuntu: `apt-get install libportaudio`
+
 ## Installation
 
 Add this to your application's `shard.yml`:
@@ -12,24 +18,19 @@ dependencies:
     github: elthariel/portaudio
 ```
 
-
 ## Usage
-
 
 ```crystal
 require "portaudio"
 ```
 
+## Samples
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+    $> crystal samples/list.cr
 
 ## Contributing
 
-1. Fork it ( https://github.com/elthariel/portaudio/fork )
+1. Fork it ( https://github.com/elthariel/crystal-portaudio/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)

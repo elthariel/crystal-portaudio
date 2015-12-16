@@ -8,7 +8,6 @@ module Pa
   def self.version_text
     String.new LibPortAudio.get_version_text
   end
-
 end
 
 alias PortAudio = Pa
